@@ -1,19 +1,4 @@
 {
   "version": 2,
-  "functions": {
-    "public/index.php": {
-      "runtime": "vercel-php@0.7.1",
-      "env": {
-        "PHP_VERSION": "8.2"
-      }
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/public/index.php"
-    }
-  ],
-  "buildCommand": "npm run vercel-build",
-  "installCommand": "composer install --no-dev --optimize-autoloader"
+  "framework": "laravel"
 }
