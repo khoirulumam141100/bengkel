@@ -17,4 +17,3 @@ Route::resource('sales', SaleController::class);
 Route::resource('services', ServiceController::class);
 Route::resource('service_sales', ServiceSaleController::class);
 Route::resource('capitals', CapitalController::class);
-Route::resource('debts', DebtController::class);

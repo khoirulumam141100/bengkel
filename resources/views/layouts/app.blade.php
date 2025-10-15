@@ -167,9 +167,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('capitals.index') }}"><i class="fas fa-money-bill-wave"></i> Modal</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('debts.index') }}"><i class="fas fa-credit-card"></i> Hutang</a>
-                    </li>
                 </ul>
             </div>
         </div>
