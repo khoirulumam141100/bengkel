@@ -1,3 +1,25 @@
 {
-  "outputDirectory": "dist"
+    "version": 2,
+    "framework": null,
+    "builds": [
+        {
+            "src": "/public/index.php",
+            "use": "@vercel/php@0.6.1"
+        },
+        {
+            "src": "/public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(css|js|images|fonts|favicon.ico)(.*)",
+            "dest": "/public/$1$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/public/index.php"
+        }
+    ],
+    "outputDirectory": "public"
 }
