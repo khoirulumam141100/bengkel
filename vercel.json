@@ -7,16 +7,17 @@
       "config": {
         "distDir": "public"
       }
-    },
-    {
-      "src": "public/index.php",
-      "use": "@vercel/php"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "public/index.php"
+      "dest": "/public/index.php"
     }
-  ]
+  ],
+  "functions": {
+    "public/index.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  }
 }
