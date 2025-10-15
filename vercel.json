@@ -1,5 +1,14 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "public"
+      }
+    }
+  ],
   "functions": {
     "public/index.php": {
       "runtime": "vercel-php@0.7.1"
@@ -12,6 +21,5 @@
     }
   ],
   "buildCommand": "composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache && npm run build",
-  "installCommand": "composer install --no-dev --optimize-autoloader",
-  "framework": null
+  "installCommand": "composer install --no-dev --optimize-autoloader"
 }
