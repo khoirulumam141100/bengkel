@@ -26,6 +26,12 @@
         .navbar-nav .nav-link:hover {
             color: #ff6b35 !important;
         }
+        .navbar-nav .nav-link.active {
+            color: #ff6b35 !important;
+            font-weight: bold;
+            background-color: rgba(255, 107, 53, 0.1);
+            border-radius: 5px;
+        }
         .card {
             background-color: #2c2c2c;
             border: 1px solid #444;
@@ -147,25 +153,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('items.index') }}"><i class="fas fa-box"></i> Barang</a>
+                        <a class="nav-link {{ request()->routeIs('items.*') ? 'active' : '' }}" href="{{ route('items.index') }}"><i class="fas fa-box"></i> Barang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('purchases.index') }}"><i class="fas fa-shopping-cart"></i> Pembelian</a>
+                        <a class="nav-link {{ request()->routeIs('purchases.*') ? 'active' : '' }}" href="{{ route('purchases.index') }}"><i class="fas fa-shopping-cart"></i> Pembelian</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('sales.index') }}"><i class="fas fa-cash-register"></i> Penjualan</a>
+                        <a class="nav-link {{ request()->routeIs('sales.*') ? 'active' : '' }}" href="{{ route('sales.index') }}"><i class="fas fa-cash-register"></i> Penjualan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('services.index') }}"><i class="fas fa-wrench"></i> Jasa</a>
+                        <a class="nav-link {{ request()->routeIs('services.*') ? 'active' : '' }}" href="{{ route('services.index') }}"><i class="fas fa-wrench"></i> Jasa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('service_sales.index') }}"><i class="fas fa-handshake"></i> Penjualan Jasa</a>
+                        <a class="nav-link {{ request()->routeIs('service_sales.*') ? 'active' : '' }}" href="{{ route('service_sales.index') }}"><i class="fas fa-handshake"></i> Penjualan Jasa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('capitals.index') }}"><i class="fas fa-money-bill-wave"></i> Modal</a>
+                        <a class="nav-link {{ request()->routeIs('capitals.*') ? 'active' : '' }}" href="{{ route('capitals.index') }}"><i class="fas fa-money-bill-wave"></i> Modal</a>
                     </li>
                 </ul>
             </div>
